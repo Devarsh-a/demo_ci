@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+url = os.getenv("APP_URL")
 def test_ui():
 
     options = Options()
@@ -12,7 +13,7 @@ def test_ui():
     # Selenium Manager automatically finds ChromeDriver
     driver = webdriver.Chrome(options=options)
 
-    driver.get("http://localhost:3000")
+    driver.get(url)
 
     wait = WebDriverWait(driver, 10)
 
@@ -28,5 +29,6 @@ def test_ui():
 
 
     driver.quit()
+
 
 
