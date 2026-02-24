@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-url = os.getenv("APP_URL")
+url ="http://20.197.19.182:3000/"
 def test_ui():
 
     options = Options()
@@ -29,6 +29,7 @@ def test_ui():
 
 
     driver.quit()
+
 
 
 
