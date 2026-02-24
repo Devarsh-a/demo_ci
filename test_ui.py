@@ -17,13 +17,15 @@ def test_ui():
     wait = WebDriverWait(driver, 10)
 
     name_box = wait.until(EC.presence_of_element_located((By.ID, "name")))
+    time.sleep(2)
     name_box.send_keys("Dev")
-
+    time.sleep(2)
     driver.find_element(By.TAG_NAME, "button").click()
-
+    time.sleep(2)
     title_text = wait.until(EC.presence_of_element_located((By.ID, "title"))).text
-
+    time.sleep(2)
     assert "Dev" in title_text
 
 
     driver.quit()
+
