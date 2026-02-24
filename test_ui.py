@@ -7,8 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 def test_ui():
 
     options = Options()
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--start-maximized")
 
     # Selenium Manager automatically finds ChromeDriver
     driver = webdriver.Chrome(options=options)
@@ -25,5 +24,6 @@ def test_ui():
     title_text = wait.until(EC.presence_of_element_located((By.ID, "title"))).text
 
     assert "Dev" in title_text
+
 
     driver.quit()
